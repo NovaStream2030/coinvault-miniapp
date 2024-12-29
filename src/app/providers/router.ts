@@ -9,6 +9,7 @@ export const history = createTelegramHistory()
 export const router = createRouter({
   routeTree,
   defaultPreload: 'intent',
+  basepath: '/coinvault-miniapp/',
   // defaultNotFoundComponent: NotFoundPage,
   // defaultErrorComponent
   defaultPendingMinMs: 100,
