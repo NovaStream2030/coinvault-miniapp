@@ -3,6 +3,8 @@ import type { NavigateOptions } from '@tanstack/react-router'
 import { createBrowserHistory } from '@tanstack/react-router'
 import { backButton } from '@telegram-apps/sdk-react'
 
+import { BASEPATH } from '@/shared/consts'
+
 export function createTelegramHistory() {
   const history = createBrowserHistory()
   let step = 1
@@ -42,4 +44,8 @@ export function createTelegramHistory() {
   }
 
   return history
+}
+
+export function preparePathname(pathname: string) {
+  return pathname.replace(BASEPATH, '')
 }

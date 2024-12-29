@@ -4,7 +4,10 @@ import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react-swc';
 import mkcert from 'vite-plugin-mkcert';
 
+import { BASEPATH } from './src/shared/consts'
+
 export default defineConfig({
+  base: BASEPATH,
   plugins: [
     TanStackRouterVite({
       routesDirectory: './src/app/routes',
@@ -14,9 +17,8 @@ export default defineConfig({
     }),
     tsconfigPaths(),
     react(),
-    mkcert(),
+    mkcert(), 
   ],
   publicDir: './public',
   server: { host: true },
-  base: '/coinvault-miniapp/'
 });
